@@ -90,6 +90,19 @@ namespace ActiviList.Services
                 return ctx.SaveChanges() == 1;
             }
         }
+
+        public bool DeleteItem(int id)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                    .Items
+                    .Single(e => e.OwnerId == _userId && e.Id == id);
+                ctx.Items.Remove(entity);
+                return ctx.SaveChanges() == 1;
+            }
+        }
     }
 
 }

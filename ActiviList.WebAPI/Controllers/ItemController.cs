@@ -48,6 +48,14 @@ namespace ActiviList.WebAPI.Controllers
             return Ok();
 
         }
+
+        public IHttpActionResult Delete(int id)
+        {
+            var itemService = CreateItemService();
+            if (!itemService.DeleteItem(id))
+                return InternalServerError();
+            return Ok();
+        }
         private ItemService CreateItemService()
         {
             var userId = Guid.Parse(User.Identity.GetUserId());
