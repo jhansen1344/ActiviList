@@ -17,7 +17,7 @@ namespace ActiviList.Services
             _userId = userId;
         }
 
-        public bool CreateItem (ItemCreate model)
+        public bool CreateItem(ItemCreate model)
         {
             var entity =
                 new Item()
@@ -53,6 +53,41 @@ namespace ActiviList.Services
                             }
                         );
                 return query.ToList();
+            }
+        }
+
+        public ItemDetail GetItemById(int id)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                    .Items
+                    .Single(e => e.OwnerId == _userId && e.Id == id);
+                return
+                    new ItemDetail
+                    {
+                        Id = entity.Id,
+                        Name = entity.Name,
+                        Nombre = entity.Nombre,
+                        Location = entity.Location,
+                    };
+            }
+        }
+
+        public bool UpdateItem(ItemUpdate model)
+        {
+            using(var ctx=new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                    .Items
+                    .Single(e => e.OwnerId == _userId && e.Id == model.Id);
+                entity.Name = model.Name;
+                entity.Nombre = model.Nombre;
+                entity.Location = model.Location;
+
+                return ctx.SaveChanges() == 1;
             }
         }
     }

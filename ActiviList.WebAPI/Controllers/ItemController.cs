@@ -30,6 +30,24 @@ namespace ActiviList.WebAPI.Controllers
                 return InternalServerError();
             return Ok();
         }
+
+        public IHttpActionResult Get(int id)
+        {
+            ItemService itemService = CreateItemService();
+            var itemDetail = itemService.GetItemById(id);
+            return Ok(itemDetail);
+        }
+
+        public IHttpActionResult Put(ItemUpdate model)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+            ItemService itemService = CreateItemService();
+            if (!itemService.UpdateItem(model))
+                return InternalServerError();
+            return Ok();
+
+        }
         private ItemService CreateItemService()
         {
             var userId = Guid.Parse(User.Identity.GetUserId());
