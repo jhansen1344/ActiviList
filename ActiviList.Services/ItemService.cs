@@ -36,7 +36,7 @@ namespace ActiviList.Services
 
         public IEnumerable<ItemListItem> GetItems()
         {
-            using (var ctx = new ApplicationDbContext)
+            using (var ctx = new ApplicationDbContext())
             {
                 var query =
                     ctx
@@ -46,6 +46,7 @@ namespace ActiviList.Services
                         e =>
                             new ItemListItem
                             {
+                                Id = e.Id,
                                 Name = e.Name,
                                 Nombre = e.Nombre,
                                 Location = e.Location
