@@ -54,11 +54,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ItemService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ActiviList.Data\ActiviList.Data.csproj">
+      <Project>{43beadd2-393f-4957-8ea7-6eff27960ad7}</Project>
+      <Name>ActiviList.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ActiviList.Models\ActiviList.Models.csproj">
+      <Project>{66d9f7b3-936a-41aa-bec5-16e21cb04ca1}</Project>
+      <Name>ActiviList.Models</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
