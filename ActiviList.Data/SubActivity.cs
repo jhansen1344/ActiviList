@@ -14,15 +14,11 @@ namespace ActiviList.Data
         [Required]
         public Guid OwnerId { get; set; }
         [Required]
-        [MaxLength(50, ErrorMessage = "Too many characters")]
-        [Display(Name = "Acitvity Name")]
         public string Name { get; set; }
-        [MaxLength(50, ErrorMessage = "Demasiado Letras")]
-        [Display(Name = "Nombre de Actividad")]
-        public string Nombre { get; set; }
         [Required]
-        [Display(Name = "Item List /Lista de Articulos")]
-        public List<Item> Items { get; set; }
+        public string Nombre { get; set; }
+        [Required]        
+        public virtual List<Item> Items { get; set; }
 
     }
 }

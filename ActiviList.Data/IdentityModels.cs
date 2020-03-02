@@ -47,7 +47,7 @@ namespace ActiviList.Data
                 .Add(new IdentityUserLoginConfiguration())
                 .Add(new IdentityUserRoleConfiguration());
 
-           //modelBuilder.Entity <SubActivity>().HasMany(p => p.Items).WithMany();
+           modelBuilder.Entity <SubActivity>().HasMany(p => p.Items).WithMany();
         }
 
     }

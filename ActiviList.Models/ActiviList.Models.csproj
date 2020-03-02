@@ -59,10 +59,18 @@
     <Compile Include="ItemListItem.cs" />
     <Compile Include="ItemUpdate.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SubActivityCreate.cs" />
+    <Compile Include="SubActivityList.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ActiviList.Data\ActiviList.Data.csproj">
+      <Project>{43BEADD2-393F-4957-8EA7-6EFF27960AD7}</Project>
+      <Name>ActiviList.Data</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

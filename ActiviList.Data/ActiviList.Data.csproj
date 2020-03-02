@@ -86,12 +86,36 @@
   <ItemGroup>
     <Compile Include="IdentityModels.cs" />
     <Compile Include="Item.cs" />
+    <Compile Include="Migrations\202003011540505_InitialCreate.cs" />
+    <Compile Include="Migrations\202003011540505_InitialCreate.Designer.cs">
+      <DependentUpon>202003011540505_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202003012135230_InitialMigration.cs" />
+    <Compile Include="Migrations\202003012135230_InitialMigration.Designer.cs">
+      <DependentUpon>202003012135230_InitialMigration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202003020145375_ManyToManyMigration.cs" />
+    <Compile Include="Migrations\202003020145375_ManyToManyMigration.Designer.cs">
+      <DependentUpon>202003020145375_ManyToManyMigration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SubActivity.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202003011540505_InitialCreate.resx">
+      <DependentUpon>202003011540505_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202003012135230_InitialMigration.resx">
+      <DependentUpon>202003012135230_InitialMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202003020145375_ManyToManyMigration.resx">
+      <DependentUpon>202003020145375_ManyToManyMigration.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
